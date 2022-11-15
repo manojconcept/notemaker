@@ -120,18 +120,12 @@ class Notemaker extends CI_Controller
     {
         $responseData = [];
         if ($this->UserModel->isLogin()) {
-            if ($this->UserModel->usercheck($id)) {
                 $this->UserModel->deleteupdateusers($id);
                 $responseData["Status"] = " deleted Successfully";
                 header("Content-Type: application/json; charset=utf-8");
                 echo json_encode($responseData);
-            } else {
-                $responseData["Status"] = "deleted unSuccessful";
-                header("Content-Type: application/json; charset=utf-8");
-                echo json_encode($responseData);
-            }
         } else {
-            $responseData["Status"] = "login unSuccessful";
+            $responseData["Status"] = "deleted unSuccessful";
             header("Content-Type: application/json; charset=utf-8");
             echo json_encode($responseData);
         }
