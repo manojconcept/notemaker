@@ -94,7 +94,7 @@ class UserModel extends CI_Model
             $update_data['deleted'] =  'Y';
             $update_data['deleted_time'] = time();
             $this->db->where('id', $id);
-            $this->db->update('user', $update_data);
+            $this->db->update('users', $update_data);
         }
 
     }
